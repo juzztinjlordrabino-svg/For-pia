@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Pia 😳💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 340px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      animation: pop 0.8s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      color: #ff2f6e;
+    }
+
+    p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      background: #ff2f6e;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 6px;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ff004c;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 22px;
+      animation: float 4s linear forwards;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-650px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="box">
+    <h1>Hi Pia 😳💖</h1>
+    <p>
+      I was gonna act cool…  
+      <br>but I failed instantly 😭  
+      <br><br>
+      So I made this instead.
+      <br><br>
+      Happy Valentine’s Day 💘
+    </p>
+    <button onclick="confess()">Click me 😏</button>
+  </div>
+
+  <script>
+    function confess() {
+      document.getElementById("box").innerHTML = `
+        <h1>Pia 😳💞</h1>
+        <p>
+          Okay real talk for a sec…  
+          <br><br>
+          I’ve liked you since Grade 10.  
+          Back then, we were classmates,  
+          and even though we drifted apart,  
+          I never really stopped liking you.
+          <br><br>
+          I just wanted you to know that  
+          you’re special to me 😌  
+          <br><br>
+          No pressure, no expectations —  
+          just honesty.
+        </p>
+        <button onclick="final()">One last thing 👀</button>
+      `;
+    }
+
+    function final() {
+      document.getElementById("box").innerHTML = `
+        <h1>Happy Valentine's 💖</h1>
+        <p>
+          Whether this makes you smile,  
+          laugh, or cringe a little 😭  
+          <br><br>
+          I’m glad I got to tell you.
+          <br><br>
+          Stay amazing, Pia 💕
+        </p>
+        <button onclick="hearts()">SPAM HEARTS 💥</button>
+      `;
+    }
+
+    function hearts() {
+      for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = ["💖","💘","💕","💗","❤️","😍"][Math.floor(Math.random()*6)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0px";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 4000);
+      }
+    }
+  </script>
+
+</body>
+</html>
